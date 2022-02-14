@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def GoldenSection(func, x1, x2, x3, iterations):
 
     
@@ -89,5 +88,12 @@ def InverseParabolic(func, x1, x2, x3, iterations):
            
     return x4, func(x4)
 
+
+def NewtonMethod(func, func_prime, func_dprime, x_0, iterations):
+        
+    for i in range(iterations):
+        x_0 = x_0-(func_prime(x_0)/func_dprime(x_0))
+    
+    return x_0
     
     
